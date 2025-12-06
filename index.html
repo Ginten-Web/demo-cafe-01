@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珈琲 琥珀堂 (Kohaku-Do)</title>
+    <style>
+        /* ベース設定 */
+        :root {
+            --bg-color: #fcf8e8; /* クリーム色 */
+            --text-color: #3e2723; /* 濃い茶色 */
+            --accent-color: #8d6e63; /* セピア */
+            --border-color: #5d4037;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* レイアウトコンテナ */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fffdf5;
+            box-shadow: 0 0 20px rgba(62, 39, 35, 0.1);
+            border-left: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            min-height: 100vh;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 3px double var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 0.2em;
+            font-weight: normal;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+            letter-spacing: 0.1em;
+            font-style: italic;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            filter: sepia(30%); /* レトロ感を演出 */
+        }
+
+        .catch-copy {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            padding: 0 10px;
+            border-left: 4px solid var(--border-color);
+            display: inline-block;
+            text-align: left;
+        }
+
+        /* セクション共通 */
+        section {
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::before, h2::after {
+            content: "◆";
+            color: var(--accent-color);
+            font-size: 0.8em;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        /* メニュー */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+            filter: sepia(20%);
+        }
+
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px dotted var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+
+        .menu-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .menu-price {
+            font-size: 1.1rem;
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: #5d4037;
+        }
+
+        /* アクセス */
+        .access-info {
+            text-align: center;
+            background-color: rgba(141, 110, 99, 0.1);
+            padding: 30px;
+            border: 1px solid var(--accent-color);
+        }
+
+        .access-row {
+            margin-bottom: 15px;
+        }
+
+        .label {
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+            color: var(--border-color);
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                box-shadow: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .catch-copy {
+                font-size: 1.1rem;
+                display: block;
+                border-left: none;
+                border-bottom: 2px solid var(--border-color);
+                text-align: center;
+                padding-bottom: 10px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>珈琲 琥珀堂</h1>
+        <div class="subtitle">Kohaku-Do</div>
+    </header>
+
+    <section id="hero" class="hero">
+        <!-- ヒーロー画像 -->
+        <img src="https://placehold.co/600x400/5e4b35/ffffff?text=Kohaku-Do+Interior" alt="店内の様子">
+        <div class="catch-copy">
+            時が止まる場所、<br>博多区の隠れ家。
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.95rem;">
+            喧騒を離れ、琥珀色の時間をお楽しみください。<br>
+            挽きたての香りと共に、皆様をお待ちしております。
+        </p>
+    </section>
+
+    <section id="menu">
+        <h2>お品書き</h2>
+        <div class="menu-grid">
+            <!-- メニュー1 -->
+            <div class="menu-item">
+                <img src="https://placehold.co/600x400/5e4b35/ffffff?text=Blend+Coffee" alt="ブレンド珈琲" class="menu-image">
+                <div class="menu-row">
+                    <span class="menu-name">琥珀ブレンド</span>
+                    <span class="menu-price">500円</span>
+                </div>
+                <div class="menu-desc">深みのあるコクと、すっきりとした後味。</div>
+            </div>
+
+            <!-- メニュー2 -->
+            <div class="menu-item">
+                <img src="https://placehold.co/600x400/5e4b35/ffffff?text=Neapolitan" alt="ナポリタン" class="menu-image">
+                <div class="menu-row">
+                    <span class="menu-name">昔ながらのナポリタン</span>
+                    <span class="menu-price">850円</span>
+                </div>
+                <div class="menu-desc">熱々の鉄板で提供する、懐かしい味わい。</div>
+            </div>
+
+            <!-- メニュー3 -->
+            <div class="menu-item">
+                <img src="https://placehold.co/600x400/5e4b35/ffffff?text=Pudding" alt="自家製プリン" class="menu-image">
+                <div class="menu-row">
+                    <span class="menu-name">クラシックプリン</span>
+                    <span class="menu-price">450円</span>
+                </div>
+                <div class="menu-desc">固めの食感とほろ苦いカラメルソース。</div>
+            </div>
+
+            <!-- メニュー4 -->
+            <div class="menu-item">
+                <img src="https://placehold.co/600x400/5e4b35/ffffff?text=Cream+Soda" alt="クリームソーダ" class="menu-image">
+                <div class="menu-row">
+                    <span class="menu-name">クリームソーダ</span>
+                    <span class="menu-price">600円</span>
+                </div>
+                <div class="menu-desc">透き通るメロン色とバニラアイスの共演。</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access">
+        <h2>店舗情報</h2>
+        <div class="access-info">
+            <div class="access-row">
+                <span class="label">住所</span><br>
+                〒812-0000<br>
+                福岡県福岡市博多区〇〇 1-2-3
+            </div>
+            <div class="access-row">
+                <span class="label">営業時間</span><br>
+                10:00 - 18:00
+            </div>
+            <div class="access-row">
+                <span class="label">定休日</span><br>
+                毎週水曜日・祝日
+            </div>
+            <div class="access-row">
+                <span class="label">電話</span><br>
+                092-000-0000
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Kohaku-Do
+    </footer>
+</div>
+
+</body>
+</html>
